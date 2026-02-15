@@ -39,10 +39,7 @@ async fn test_lua_execution() {
     println!("Current game tick: {}", tick);
 
     // Tick should be a number
-    let _tick_num: u64 = tick
-        .trim()
-        .parse()
-        .expect("Tick should be a valid number");
+    let _tick_num: u64 = tick.trim().parse().expect("Tick should be a valid number");
 
     // u64 is always >= 0, so just checking it parses is sufficient
 }

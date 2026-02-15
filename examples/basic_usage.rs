@@ -19,7 +19,9 @@ async fn main() -> factorio_rcon::Result<()> {
     let tick = client.execute("/c rcon.print(game.tick)").await?;
     println!("Current game tick: {}", tick);
 
-    let seed = client.execute("/c rcon.print(game.surfaces[1].map_gen_settings.seed)").await?;
+    let seed = client
+        .execute("/c rcon.print(game.surfaces[1].map_gen_settings.seed)")
+        .await?;
     println!("Map seed: {}", seed);
 
     // Query with serpent serialization for structured data
@@ -44,7 +46,10 @@ async fn main() -> factorio_rcon::Result<()> {
             Duration::from_secs(10),
         )
         .await?;
-    println!("Surfaces (first 100 chars): {}...", &surfaces[..surfaces.len().min(100)]);
+    println!(
+        "Surfaces (first 100 chars): {}...",
+        &surfaces[..surfaces.len().min(100)]
+    );
 
     // Configure default timeout
     client.set_timeout(Duration::from_secs(15));
