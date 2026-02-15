@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 description = "Async RCON client for Factorio with proper multi-packet response handling"
+repository = "https://github.com/alloc33/factorio-rcon"
 keywords = ["factorio", "rcon", "async", "gaming"]
 categories = ["network-programming", "asynchronous", "games"]
 
